@@ -1,0 +1,25 @@
+%%{init: {'theme': 'base', 'themeVariables': { 'fontFamily': 'Arial' }}}%%
+sequenceDiagram
+    participant C as Client
+    participant A as Authorization Server
+    participant R as Resource Server
+    
+    %% Define classes for custom colors
+    classDef purple fill:#8B00FF,color:#FFFFFF,stroke:#8B00FF
+    classDef blue fill:#0066CC,color:#FFFFFF,stroke:#0066CC
+    classDef green fill:#4CAF50,color:#FFFFFF,stroke:#4CAF50
+    
+    %% Apply classes to each participant
+    class C purple
+    class A blue
+    class R green
+    
+    %% The steps match the original flow
+    C->>A: Authorization Request
+    A->>C: Authorization Code
+    C->>A: Access Token Request
+    A->>R: Token Verification
+    R->>A: Token Verification Response
+    A->>C: Access Token
+    C->>R: API Request
+    R->>C: API Response
