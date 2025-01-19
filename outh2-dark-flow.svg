@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg
+    width="900" height="600" viewBox="0 0 900 600"
+    xmlns="http://www.w3.org/2000/svg"
+>
+  <!-- Background -->
+  <rect x="0" y="0" width="100%" height="100%" fill="#111" />
+
+  <!-- Title with a soft glow -->
+  <text
+    x="450" y="50"
+    fill="#FFFFFF"
+    font-size="28"
+    font-family="sans-serif"
+    text-anchor="middle"
+    style="text-shadow: 0 0 5px #FFFFFF;"
+  >
+    OAuth 2.0 Authorization Flow
+  </text>
+
+  <!-- Swim Lane: Client -->
+  <rect
+    x="50" y="100" width="150" height="50"
+    rx="10"
+    fill="#9A3DAB"
+  />
+  <text
+    x="125" y="130"
+    fill="#FFFFFF"
+    font-size="14"
+    font-family="sans-serif"
+    text-anchor="middle"
+  >
+    Client
+  </text>
+
+  <!-- Swim Lane: Authorization Server (replace with your preferred non-cyan color) -->
+  <rect
+    x="375" y="100" width="160" height="50"
+    rx="10"
+    fill="#007B7B"
+  />
+  <text
+    x="455" y="130"
+    fill="#FFFFFF"
+    font-size="14"
+    font-family="sans-serif"
+    text-anchor="middle"
+  >
+    Authorization Server
+  </text>
+
+  <!-- Swim Lane: Resource Server -->
+  <rect
+    x="700" y="100" width="160" height="50"
+    rx="10"
+    fill="#B36B2C"
+  />
+  <text
+    x="780" y="130"
+    fill="#FFFFFF"
+    font-size="14"
+    font-family="sans-serif"
+    text-anchor="middle"
+  >
+    Resource Server
+  </text>
+
+  <!-- Vertical “Swim Lane” lines -->
+  <line x1="125" y1="150" x2="125" y2="550" stroke="#444" stroke-width="2" />
+  <line x1="455" y1="150" x2="455" y2="550" stroke="#444" stroke-width="2" />
+  <line x1="780" y1="150" x2="780" y2="550" stroke="#444" stroke-width="2" />
+
+  <!-- Flow Steps -->
+  <text
+    x="140" y="200"
+    fill="#FFFFFF"
+    font-size="14"
+    font-family="sans-serif"
+  >
+    Authorization Request
+  </text>
+
+  <text
+    x="140" y="230"
+    fill="#FFFFFF"
+    font-size="14"
+    font-family="sans-serif"
+  >
+    Authorization Code
+  </text>
+
+  <text
+    x="140" y="260"
+    fill="#FFFFFF"
+    font-size="14"
+    font-family="sans-serif"
+  >
+    Access Token Request
+  </text>
+
+  <text
+    x="470" y="290"
+    fill="#FFFFFF"
+    font-size="14"
+    font-family="sans-serif"
+  >
+    Token Verification
+  </text>
+
+  <text
+    x="470" y="320"
+    fill="#FFFFFF"
+    font-size="14"
+    font-family="sans-serif"
+  >
+    Token Verification Response
+  </text>
+
+  <text
+    x="140" y="350"
+    fill="#FFFFFF"
+    font-size="14"
+    font-family="sans-serif"
+  >
+    Access Token
+  </text>
+
+  <text
+    x="140" y="380"
+    fill="#FFFFFF"
+    font-size="14"
+    font-family="sans-serif"
+  >
+    API Request
+  </text>
+
+  <text
+    x="140" y="410"
+    fill="#FFFFFF"
+    font-size="14"
+    font-family="sans-serif"
+  >
+    API Response
+  </text>
+</svg>
