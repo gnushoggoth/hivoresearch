@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+    <!-- Define gradients for a more sophisticated look -->
+    <defs>
+        <linearGradient id="clientGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#9333EA" />
+            <stop offset="100%" style="stop-color:#7C3AED" />
+        </linearGradient>
+        <linearGradient id="authGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#3B82F6" />
+            <stop offset="100%" style="stop-color:#2563EB" />
+        </linearGradient>
+        <linearGradient id="resourceGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#10B981" />
+            <stop offset="100%" style="stop-color:#059669" />
+        </linearGradient>
+    </defs>
+
+    <!-- Title -->
+    <text x="400" y="40" text-anchor="middle" 
+        fill="#1F2937" font-size="24" font-family="Arial">
+        OAuth 2.0 Authorization Flow
+    </text>
+
+    <!-- Service boxes -->
+    <rect x="100" y="80" width="120" height="50" rx="10" 
+        fill="url(#clientGradient)" />
+    <rect x="340" y="80" width="120" height="50" rx="10" 
+        fill="url(#authGradient)" />
+    <rect x="580" y="80" width="120" height="50" rx="10" 
+        fill="url(#resourceGradient)" />
+
+    <!-- Service labels -->
+    <text x="160" y="110" text-anchor="middle" fill="white" 
+        font-size="14" font-family="Arial">Client</text>
+    <text x="400" y="110" text-anchor="middle" fill="white" 
+        font-size="14" font-family="Arial">Authorization Server</text>
+    <text x="640" y="110" text-anchor="middle" fill="white" 
+        font-size="14" font-family="Arial">Resource Server</text>
+
+    <!-- Vertical timeline lines -->
+    <line x1="160" y1="130" x2="160" y2="550" stroke="#E5E7EB" stroke-width="2"/>
+    <line x1="400" y1="130" x2="400" y2="550" stroke="#E5E7EB" stroke-width="2"/>
+    <line x1="640" y1="130" x2="640" y2="550" stroke="#E5E7EB" stroke-width="2"/>
+
+    <!-- Flow arrows and labels -->
+    <!-- Authorization Request -->
+    <line x1="160" y1="180" x2="400" y2="180" stroke="#9CA3AF" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="280" y="175" text-anchor="middle" fill="#4B5563" font-size="12">Authorization Request</text>
+
+    <!-- Authorization Code -->
+    <line x1="400" y1="230" x2="160" y2="230" stroke="#9CA3AF" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="280" y="225" text-anchor="middle" fill="#4B5563" font-size="12">Authorization Code</text>
+
+    <!-- Access Token Request -->
+    <line x1="160" y1="280" x2="640" y2="280" stroke="#9CA3AF" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="400" y="275" text-anchor="middle" fill="#4B5563" font-size="12">Access Token Request</text>
+
+    <!-- Token Verification -->
+    <line x1="640" y1="330" x2="400" y2="330" stroke="#9CA3AF" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="520" y="325" text-anchor="middle" fill="#4B5563" font-size="12">Token Verification</text>
+
+    <!-- Token Verification Response -->
+    <line x1="400" y1="380" x2="640" y2="380" stroke="#9CA3AF" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="520" y="375" text-anchor="middle" fill="#4B5563" font-size="12">Token Verification Response</text>
+
+    <!-- Access Token -->
+    <line x1="640" y1="430" x2="160" y2="430" stroke="#9CA3AF" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="400" y="425" text-anchor="middle" fill="#4B5563" font-size="12">Access Token</text>
+
+    <!-- API Request -->
+    <line x1="160" y1="480" x2="640" y2="480" stroke="#9CA3AF" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="400" y="475" text-anchor="middle" fill="#4B5563" font-size="12">API Request</text>
+
+    <!-- API Response -->
+    <line x1="640" y1="530" x2="160" y2="530" stroke="#9CA3AF" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="400" y="525" text-anchor="middle" fill="#4B5563" font-size="12">API Response</text>
+
+    <!-- Arrow marker definition -->
+    <defs>
+        <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" 
+                orient="auto" markerUnits="strokeWidth">
+            <path d="M0,0 L0,6 L9,3 z" fill="#9CA3AF"/>
+        </marker>
+    </defs>
+</svg>
