@@ -1,0 +1,87 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .function-path {
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    
+    .function-label {
+      font-family: monospace;
+      font-size: 14px;
+      fill: white;
+      text-anchor: middle;
+    }
+  </style>
+
+  <script>
+    // Define the piecewise function parameters
+    const k1 = 10, a1 = 0.1;
+    const k2 = 8, a2 = 0.2;
+    const Ty = 50;
+
+    // Calculate the function values
+    function calculateFunction(t) {
+      if (t < Ty) {
+        return k1 * a1 * t;
+      } else {
+        return k2 * a2 * t;
+      }
+    }
+
+    // Render the function path
+    function renderFunctionPath() {
+      const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+      path.classList.add("function-path");
+
+      let d = "M0,600 ";
+      for (let t = 0; t <= 800; t += 1) {
+        const y = 600 - calculateFunction(t);
+        d += `L${t},${y} `;
+      }
+
+      path.setAttribute("d", d);
+
+      if (calculateFunction(Ty) < 600) {
+        path.setAttribute("stroke", "#00ff00");
+      } else {
+        path.setAttribute("stroke", "#ff0000");
+      }
+
+      return path;
+    }
+
+    // Render the function labels
+    function renderFunctionLabels() {
+      const label1 = document.createElementNS("http://www.w3.org/2000/svg", "text");
+      label1.classList.add("function-label");
+      label1.setAttribute("x", 100);
+      label1.setAttribute("y", 550);
+      label1.textContent = `k1 * a1(t), if t < ${Ty}`;
+
+      const label2 = document.createElementNS("http://www.w3.org/2000/svg", "text");
+      label2.classList.add("function-label");
+      label2.setAttribute("x", 700);
+      label2.setAttribute("y", 550);
+      label2.textContent = `k2 * a2(t), if t >= ${Ty}`;
+
+      return [label1, label2];
+    }
+
+    // Render the complete visualization
+    function renderVisualization() {
+      const functionPath = renderFunctionPath();
+      const [label1, label2] = renderFunctionLabels();
+
+      const svg = document.querySelector("svg");
+      svg.appendChild(functionPath);
+      svg.appendChild(label1);
+      svg.appendChild(label2);
+    }
+
+    renderVisualization();
+  </script>
+
+  <rect width="800" height="600" fill="#222222" />
+</svg>
