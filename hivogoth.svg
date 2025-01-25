@@ -1,0 +1,41 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cybergoth-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8B008B" />
+      <stop offset="50%" stop-color="#4B0082" />
+      <stop offset="100%" stop-color="#8B008B" />
+    </linearGradient>
+    
+    <filter id="glitch-effect">
+      <feTurbulence type="fractalNoise" baseFrequency="0.1" numOctaves="2" seed="4" result="turbulence" />
+      <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="20" />
+    </filter>
+  </defs>
+
+  <rect width="800" height="600" fill="#0F0F0F" />
+
+  <g transform="translate(100, 100)">
+    <rect width="200" height="200" rx="20" fill="url(#cybergoth-gradient)" filter="url(#glitch-effect)" />
+    <text font-family="'Courier New', monospace" font-size="24px" fill="#FFFFFF" x="100" y="100" text-anchor="middle">Big<tspan dx="5" dy="25">Language</tspan><tspan dx="5" dy="25">Model</tspan></text>
+  </g>
+
+  <g transform="translate(500, 300)">
+    <rect width="200" height="200" rx="20" fill="url(#cybergoth-gradient)" filter="url(#glitch-effect)" />
+    <text font-family="'Courier New', monospace" font-size="24px" fill="#FFFFFF" x="100" y="100" text-anchor="middle">LORA</text>
+    <text font-family="'Courier New', monospace" font-size="18px" fill="#FFFFFF" x="100" y="150" text-anchor="middle">Efficient<tspan dx="5" dy="25">Fine-Tuning</tspan></text>
+  </g>
+
+  <path d="M300,200 C400,250 500,250 600,400" 
+        fill="none" 
+        stroke="url(#cybergoth-gradient)" 
+        stroke-width="4" 
+        stroke-linecap="round" 
+        stroke-linejoin="round" 
+        filter="url(#glitch-effect)" />
+
+  <text font-family="'Courier New', monospace" font-size="18px" fill="#FFFFFF" x="400" y="500" text-anchor="middle">
+    <tspan>Adapt with fewer</tspan>
+    <tspan x="400" y="525">Parameters, model still learns</tspan>
+    <tspan x="400" y="550">New tasks precisely</tspan>
+  </text>
+</svg>
