@@ -1,116 +1,193 @@
-<svg width="800" height="900" xmlns="http://www.w3.org/2000/svg">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+    <defs>
+        <!-- Gradients -->
+        <linearGradient id="rootGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#2D3748;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#1A202C;stop-opacity:1" />
+        </linearGradient>
+        <linearGradient id="dirGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#4A5568;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#2D3748;stop-opacity:1" />
+        </linearGradient>
+        <!-- Filters -->
+        <filter id="dropShadow">
+            <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+        </filter>
+    </defs>
+    
     <style>
-        .dir { fill: white; stroke: black; stroke-width: 2px; font-size: 14px; font-family: Arial, sans-serif; }
-        .text { font-size: 12px; font-family: Arial, sans-serif; }
+        .dir-box {
+            fill: url(#dirGrad);
+            rx: 8;
+            filter: url(#dropShadow);
+        }
+        .root-box {
+            fill: url(#rootGrad);
+            rx: 8;
+            filter: url(#dropShadow);
+        }
+        .dir-text {
+            fill: white;
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-weight: 600;
+        }
+        .desc-text {
+            fill: #CBD5E0;
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-size: 12px;
+        }
+        .connector {
+            stroke: #718096;
+            stroke-width: 2;
+            stroke-linecap: round;
+        }
     </style>
 
-    <!-- Root -->
-    <rect x="350" y="20" width="100" height="40" class="dir"/>
-    <text x="380" y="45" class="text">/ (root)</text>
-
-    <!-- Directories -->
-    <g>
-        <rect x="100" y="100" width="100" height="40" class="dir"/>
-        <text x="130" y="125" class="text">/bin</text>
-
-        <rect x="250" y="100" width="100" height="40" class="dir"/>
-        <text x="280" y="125" class="text">/boot</text>
-
-        <rect x="400" y="100" width="100" height="40" class="dir"/>
-        <text x="430" y="125" class="text">/dev</text>
-
-        <rect x="550" y="100" width="100" height="40" class="dir"/>
-        <text x="580" y="125" class="text">/etc</text>
+    <!-- Root Directory -->
+    <g transform="translate(550,40)">
+        <rect class="root-box" x="-60" y="-25" width="120" height="50"/>
+        <text class="dir-text" x="0" y="5" text-anchor="middle">/ (root)</text>
     </g>
 
-    <g>
-        <rect x="100" y="180" width="100" height="40" class="dir"/>
-        <text x="130" y="205" class="text">/home</text>
-
-        <rect x="250" y="180" width="100" height="40" class="dir"/>
-        <text x="280" y="205" class="text">/lib</text>
-
-        <rect x="400" y="180" width="100" height="40" class="dir"/>
-        <text x="430" y="205" class="text">/media</text>
-
-        <rect x="550" y="180" width="100" height="40" class="dir"/>
-        <text x="580" y="205" class="text">/mnt</text>
+    <!-- Essential System Directories -->
+    <g transform="translate(200,150)">
+        <rect class="dir-box" x="-50" y="-25" width="100" height="50"/>
+        <text class="dir-text" x="0" y="-5" text-anchor="middle">/bin</text>
+        <text class="desc-text" x="0" y="15" text-anchor="middle">Essential binaries</text>
     </g>
 
-    <g>
-        <rect x="100" y="260" width="100" height="40" class="dir"/>
-        <text x="130" y="285" class="text">/opt</text>
-
-        <rect x="250" y="260" width="100" height="40" class="dir"/>
-        <text x="280" y="285" class="text">/proc</text>
-
-        <rect x="400" y="260" width="100" height="40" class="dir"/>
-        <text x="430" y="285" class="text">/root</text>
-
-        <rect x="550" y="260" width="100" height="40" class="dir"/>
-        <text x="580" y="285" class="text">/run</text>
+    <g transform="translate(400,150)">
+        <rect class="dir-box" x="-50" y="-25" width="100" height="50"/>
+        <text class="dir-text" x="0" y="-5" text-anchor="middle">/boot</text>
+        <text class="desc-text" x="0" y="15" text-anchor="middle">Boot files</text>
     </g>
 
-    <g>
-        <rect x="100" y="340" width="100" height="40" class="dir"/>
-        <text x="130" y="365" class="text">/sbin</text>
-
-        <rect x="250" y="340" width="100" height="40" class="dir"/>
-        <text x="280" y="365" class="text">/srv</text>
-
-        <rect x="400" y="340" width="100" height="40" class="dir"/>
-        <text x="430" y="365" class="text">/sys</text>
-
-        <rect x="550" y="340" width="100" height="40" class="dir"/>
-        <text x="580" y="365" class="text">/tmp</text>
+    <g transform="translate(600,150)">
+        <rect class="dir-box" x="-50" y="-25" width="100" height="50"/>
+        <text class="dir-text" x="0" y="-5" text-anchor="middle">/etc</text>
+        <text class="desc-text" x="0" y="15" text-anchor="middle">Configuration</text>
     </g>
 
-    <!-- /usr and /var -->
-    <g>
-        <rect x="250" y="420" width="100" height="40" class="dir"/>
-        <text x="280" y="445" class="text">/usr</text>
-
-        <rect x="400" y="420" width="100" height="40" class="dir"/>
-        <text x="430" y="445" class="text">/var</text>
+    <g transform="translate(800,150)">
+        <rect class="dir-box" x="-50" y="-25" width="100" height="50"/>
+        <text class="dir-text" x="0" y="-5" text-anchor="middle">/lib</text>
+        <text class="desc-text" x="0" y="15" text-anchor="middle">System libraries</text>
     </g>
 
-    <!-- Subdirectories under /usr -->
-    <g>
-        <rect x="200" y="500" width="80" height="40" class="dir"/>
-        <text x="215" y="525" class="text">/usr/bin</text>
-
-        <rect x="300" y="500" width="80" height="40" class="dir"/>
-        <text x="315" y="525" class="text">/usr/lib</text>
-
-        <rect x="400" y="500" width="80" height="40" class="dir"/>
-        <text x="415" y="525" class="text">/usr/share</text>
+    <!-- User and Data Directories -->
+    <g transform="translate(200,250)">
+        <rect class="dir-box" x="-50" y="-25" width="100" height="50"/>
+        <text class="dir-text" x="0" y="-5" text-anchor="middle">/home</text>
+        <text class="desc-text" x="0" y="15" text-anchor="middle">User files</text>
     </g>
 
-    <!-- Connecting lines -->
-    <line x1="400" y1="60" x2="150" y2="100" stroke="black"/>
-    <line x1="400" y1="60" x2="300" y2="100" stroke="black"/>
-    <line x1="400" y1="60" x2="450" y2="100" stroke="black"/>
-    <line x1="400" y1="60" x2="600" y2="100" stroke="black"/>
+    <g transform="translate(400,250)">
+        <rect class="dir-box" x="-50" y="-25" width="100" height="50"/>
+        <text class="dir-text" x="0" y="-5" text-anchor="middle">/opt</text>
+        <text class="desc-text" x="0" y="15" text-anchor="middle">Optional apps</text>
+    </g>
 
-    <line x1="400" y1="140" x2="150" y2="180" stroke="black"/>
-    <line x1="400" y1="140" x2="300" y2="180" stroke="black"/>
-    <line x1="400" y1="140" x2="450" y2="180" stroke="black"/>
-    <line x1="400" y1="140" x2="600" y2="180" stroke="black"/>
+    <g transform="translate(600,250)">
+        <rect class="dir-box" x="-50" y="-25" width="100" height="50"/>
+        <text class="dir-text" x="0" y="-5" text-anchor="middle">/root</text>
+        <text class="desc-text" x="0" y="15" text-anchor="middle">Root user home</text>
+    </g>
 
-    <line x1="400" y1="220" x2="150" y2="260" stroke="black"/>
-    <line x1="400" y1="220" x2="300" y2="260" stroke="black"/>
-    <line x1="400" y1="220" x2="450" y2="260" stroke="black"/>
-    <line x1="400" y1="220" x2="600" y2="260" stroke="black"/>
+    <g transform="translate(800,250)">
+        <rect class="dir-box" x="-50" y="-25" width="100" height="50"/>
+        <text class="dir-text" x="0" y="-5" text-anchor="middle">/usr</text>
+        <text class="desc-text" x="0" y="15" text-anchor="middle">User programs</text>
+    </g>
 
-    <line x1="400" y1="300" x2="150" y2="340" stroke="black"/>
-    <line x1="400" y1="300" x2="300" y2="340" stroke="black"/>
-    <line x1="400" y1="300" x2="450" y2="340" stroke="black"/>
-    <line x1="400" y1="300" x2="600" y2="340" stroke="black"/>
+    <!-- System and Variable Directories -->
+    <g transform="translate(200,350)">
+        <rect class="dir-box" x="-50" y="-25" width="100" height="50"/>
+        <text class="dir-text" x="0" y="-5" text-anchor="middle">/var</text>
+        <text class="desc-text" x="0" y="15" text-anchor="middle">Variable data</text>
+    </g>
 
-    <line x1="400" y1="380" x2="300" y2="420" stroke="black"/>
-    <line x1="400" y1="380" x2="450" y2="420" stroke="black"/>
+    <g transform="translate(400,350)">
+        <rect class="dir-box" x="-50" y="-25" width="100" height="50"/>
+        <text class="dir-text" x="0" y="-5" text-anchor="middle">/tmp</text>
+        <text class="desc-text" x="0" y="15" text-anchor="middle">Temporary files</text>
+    </g>
 
-    <line x1="300" y1="460" x2="240" y2="500" stroke="black"/>
-    <line x1="300" y1="460" x2="340" y2="500" stroke="black"/>
-    <line x1="300" y1="460" x2="440" y2="500" stroke="black"/>
+    <g transform="translate(600,350)">
+        <rect class="dir-box" x="-50" y="-25" width="100" height="50"/>
+        <text class="dir-text" x="0" y="-5" text-anchor="middle">/proc</text>
+        <text class="desc-text" x="0" y="15" text-anchor="middle">Process info</text>
+    </g>
+
+    <g transform="translate(800,350)">
+        <rect class="dir-box" x="-50" y="-25" width="100" height="50"/>
+        <text class="dir-text" x="0" y="-5" text-anchor="middle">/sys</text>
+        <text class="desc-text" x="0" y="15" text-anchor="middle">System info</text>
+    </g>
+
+    <!-- Mount Points -->
+    <g transform="translate(300,450)">
+        <rect class="dir-box" x="-50" y="-25" width="100" height="50"/>
+        <text class="dir-text" x="0" y="-5" text-anchor="middle">/media</text>
+        <text class="desc-text" x="0" y="15" text-anchor="middle">Removable media</text>
+    </g>
+
+    <g transform="translate(500,450)">
+        <rect class="dir-box" x="-50" y="-25" width="100" height="50"/>
+        <text class="dir-text" x="0" y="-5" text-anchor="middle">/mnt</text>
+        <text class="desc-text" x="0" y="15" text-anchor="middle">Mount point</text>
+    </g>
+
+    <g transform="translate(700,450)">
+        <rect class="dir-box" x="-50" y="-25" width="100" height="50"/>
+        <text class="dir-text" x="0" y="-5" text-anchor="middle">/srv</text>
+        <text class="desc-text" x="0" y="15" text-anchor="middle">Service data</text>
+    </g>
+
+    <!-- /usr subdirectories -->
+    <g transform="translate(700,550)">
+        <rect class="dir-box" x="-50" y="-25" width="100" height="50"/>
+        <text class="dir-text" x="0" y="-5" text-anchor="middle">/usr/bin</text>
+        <text class="desc-text" x="0" y="15" text-anchor="middle">User commands</text>
+    </g>
+
+    <g transform="translate(850,550)">
+        <rect class="dir-box" x="-50" y="-25" width="100" height="50"/>
+        <text class="dir-text" x="0" y="-5" text-anchor="middle">/usr/lib</text>
+        <text class="desc-text" x="0" y="15" text-anchor="middle">Program libraries</text>
+    </g>
+
+    <g transform="translate(1000,550)">
+        <rect class="dir-box" x="-50" y="-25" width="100" height="50"/>
+        <text class="dir-text" x="0" y="-5" text-anchor="middle">/usr/share</text>
+        <text class="desc-text" x="0" y="15" text-anchor="middle">Shared resources</text>
+    </g>
+
+    <!-- Connectors -->
+    <!-- Root to first level -->
+    <path class="connector" d="M550,65 C550,100 200,120 200,125"/>
+    <path class="connector" d="M550,65 C550,100 400,120 400,125"/>
+    <path class="connector" d="M550,65 C550,100 600,120 600,125"/>
+    <path class="connector" d="M550,65 C550,100 800,120 800,125"/>
+
+    <!-- First to second level -->
+    <path class="connector" d="M200,175 C200,200 200,220 200,225"/>
+    <path class="connector" d="M400,175 C400,200 400,220 400,225"/>
+    <path class="connector" d="M600,175 C600,200 600,220 600,225"/>
+    <path class="connector" d="M800,175 C800,200 800,220 800,225"/>
+
+    <!-- Second to third level -->
+    <path class="connector" d="M200,275 C200,300 200,320 200,325"/>
+    <path class="connector" d="M400,275 C400,300 400,320 400,325"/>
+    <path class="connector" d="M600,275 C600,300 600,320 600,325"/>
+    <path class="connector" d="M800,275 C800,300 800,320 800,325"/>
+
+    <!-- Third to fourth level -->
+    <path class="connector" d="M200,375 C200,400 300,420 300,425"/>
+    <path class="connector" d="M400,375 C400,400 500,420 500,425"/>
+    <path class="connector" d="M600,375 C600,400 700,420 700,425"/>
+
+    <!-- /usr to its subdirectories -->
+    <path class="connector" d="M800,275 C800,500 700,520 700,525"/>
+    <path class="connector" d="M800,275 C800,500 850,520 850,525"/>
+    <path class="connector" d="M800,275 C800,500 1000,520 1000,525"/>
 </svg>
