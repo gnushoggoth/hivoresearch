@@ -1,0 +1,210 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200">
+    <defs>
+        <!-- Mystical gradients -->
+        <radialGradient id="voidGrad" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+            <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#000000;stop-opacity:1" />
+        </radialGradient>
+        
+        <linearGradient id="runeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#4a0028;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#16213e;stop-opacity:1" />
+        </linearGradient>
+
+        <!-- Glowing effect -->
+        <filter id="glow">
+            <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+            <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+
+        <!-- Texture overlay -->
+        <pattern id="noise" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+            <rect width="100" height="100" fill="#000"/>
+            <filter id="n">
+                <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="3" stitchTiles="stitch"/>
+                <feColorMatrix type="saturate" values="0"/>
+            </filter>
+            <rect width="100" height="100" filter="url(#n)" opacity="0.1"/>
+        </pattern>
+    </defs>
+
+    <style>
+        .node {
+            fill: url(#runeGrad);
+            stroke: #6a1b9a;
+            stroke-width: 2;
+            filter: url(#glow);
+        }
+        .root-node {
+            fill: url(#runeGrad);
+            stroke: #9c27b0;
+            stroke-width: 3;
+            filter: url(#glow);
+        }
+        .text {
+            fill: #e1bee7;
+            font-family: "Luminari", "Copperplate Gothic", fantasy;
+            text-anchor: middle;
+            filter: url(#glow);
+        }
+        .connection {
+            stroke: #4a148c;
+            stroke-width: 1.5;
+            fill: none;
+            opacity: 0.6;
+        }
+        .description {
+            fill: #b39ddb;
+            font-family: "Luminari", "Copperplate Gothic", fantasy;
+            font-size: 10px;
+            text-anchor: middle;
+        }
+    </style>
+
+    <!-- Background -->
+    <rect width="100%" height="100%" fill="url(#voidGrad)"/>
+    <rect width="100%" height="100%" fill="url(#noise)"/>
+
+    <!-- Mystical Circles -->
+    <g transform="translate(600,600)">
+        <circle r="550" fill="none" stroke="#311b92" stroke-width="1" opacity="0.3"/>
+        <circle r="450" fill="none" stroke="#311b92" stroke-width="1" opacity="0.3"/>
+        <circle r="350" fill="none" stroke="#311b92" stroke-width="1" opacity="0.3"/>
+        
+        <!-- Arcane Symbols -->
+        <path d="M0,-550 L30,-520 L-30,-520 Z" fill="none" stroke="#7c4dff" stroke-width="1" opacity="0.5"/>
+        <path d="M0,550 L-30,520 L30,520 Z" fill="none" stroke="#7c4dff" stroke-width="1" opacity="0.5"/>
+        <path d="M-550,0 L-520,-30 L-520,30 Z" fill="none" stroke="#7c4dff" stroke-width="1" opacity="0.5"/>
+        <path d="M550,0 L520,30 L520,-30 Z" fill="none" stroke="#7c4dff" stroke-width="1" opacity="0.5"/>
+    </g>
+
+    <!-- Root Node -->
+    <g transform="translate(600,300)">
+        <circle class="root-node" r="40"/>
+        <text class="text" y="5" font-size="16">/</text>
+        <text class="description" y="25" font-size="8">Root of All</text>
+    </g>
+
+    <!-- Essential System Nodes -->
+    <g id="level1">
+        <!-- /bin -->
+        <g transform="translate(300,400)">
+            <circle class="node" r="35"/>
+            <text class="text" y="0" font-size="14">bin</text>
+            <text class="description" y="20">Binary Arsenal</text>
+        </g>
+        <!-- /boot -->
+        <g transform="translate(500,400)">
+            <circle class="node" r="35"/>
+            <text class="text" y="0" font-size="14">boot</text>
+            <text class="description" y="20">Genesis Sigil</text>
+        </g>
+        <!-- /etc -->
+        <g transform="translate(700,400)">
+            <circle class="node" r="35"/>
+            <text class="text" y="0" font-size="14">etc</text>
+            <text class="description" y="20">Configuration Grimoire</text>
+        </g>
+        <!-- /home -->
+        <g transform="translate(900,400)">
+            <circle class="node" r="35"/>
+            <text class="text" y="0" font-size="14">home</text>
+            <text class="description" y="20">Mortal Haven</text>
+        </g>
+    </g>
+
+    <!-- System Resource Nodes -->
+    <g id="level2">
+        <!-- /lib -->
+        <g transform="translate(200,600)">
+            <circle class="node" r="35"/>
+            <text class="text" y="0" font-size="14">lib</text>
+            <text class="description" y="20">Shared Secrets</text>
+        </g>
+        <!-- /opt -->
+        <g transform="translate(400,600)">
+            <circle class="node" r="35"/>
+            <text class="text" y="0" font-size="14">opt</text>
+            <text class="description" y="20">Optional Realm</text>
+        </g>
+        <!-- /proc -->
+        <g transform="translate(600,600)">
+            <circle class="node" r="35"/>
+            <text class="text" y="0" font-size="14">proc</text>
+            <text class="description" y="20">Process Abyss</text>
+        </g>
+        <!-- /sys -->
+        <g transform="translate(800,600)">
+            <circle class="node" r="35"/>
+            <text class="text" y="0" font-size="14">sys</text>
+            <text class="description" y="20">System Conduit</text>
+        </g>
+        <!-- /var -->
+        <g transform="translate(1000,600)">
+            <circle class="node" r="35"/>
+            <text class="text" y="0" font-size="14">var</text>
+            <text class="description" y="20">Flowing Logs</text>
+        </g>
+    </g>
+
+    <!-- Temporary and Mount Nodes -->
+    <g id="level3">
+        <!-- /tmp -->
+        <g transform="translate(300,800)">
+            <circle class="node" r="35"/>
+            <text class="text" y="0" font-size="14">tmp</text>
+            <text class="description" y="20">Temporal Void</text>
+        </g>
+        <!-- /media -->
+        <g transform="translate(500,800)">
+            <circle class="node" r="35"/>
+            <text class="text" y="0" font-size="14">media</text>
+            <text class="description" y="20">External Gateway</text>
+        </g>
+        <!-- /mnt -->
+        <g transform="translate(700,800)">
+            <circle class="node" r="35"/>
+            <text class="text" y="0" font-size="14">mnt</text>
+            <text class="description" y="20">Mount Nexus</text>
+        </g>
+        <!-- /srv -->
+        <g transform="translate(900,800)">
+            <circle class="node" r="35"/>
+            <text class="text" y="0" font-size="14">srv</text>
+            <text class="description" y="20">Service Shrine</text>
+        </g>
+    </g>
+
+    <!-- Mystical Connections -->
+    <g id="connections" class="connection">
+        <!-- Level 1 connections -->
+        <path d="M600,340 Q450,370 300,400"/>
+        <path d="M600,340 Q550,370 500,400"/>
+        <path d="M600,340 Q650,370 700,400"/>
+        <path d="M600,340 Q750,370 900,400"/>
+        
+        <!-- Level 2 connections -->
+        <path d="M300,435 Q250,500 200,600"/>
+        <path d="M500,435 Q450,500 400,600"/>
+        <path d="M700,435 Q650,500 600,600"/>
+        <path d="M900,435 Q850,500 800,600"/>
+        <path d="M900,435 Q950,500 1000,600"/>
+        
+        <!-- Level 3 connections -->
+        <path d="M200,635 Q250,700 300,800"/>
+        <path d="M400,635 Q450,700 500,800"/>
+        <path d="M600,635 Q650,700 700,800"/>
+        <path d="M800,635 Q850,700 900,800"/>
+    </g>
+
+    <!-- Arcane Runes -->
+    <g id="runes">
+        <circle cx="150" cy="150" r="3" fill="#7c4dff" opacity="0.5"/>
+        <circle cx="1050" cy="150" r="3" fill="#7c4dff" opacity="0.5"/>
+        <circle cx="150" cy="1050" r="3" fill="#7c4dff" opacity="0.5"/>
+        <circle cx="1050" cy="1050" r="3" fill="#7c4dff" opacity="0.5"/>
+    </g>
+</svg>
