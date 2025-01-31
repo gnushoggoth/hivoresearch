@@ -1,0 +1,16 @@
+name: Deploy SVGs
+
+on:
+  push:
+    paths:
+      - 'path/to/your/svgs/*'  # Trigger when SVGs are changed
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Deploy SVGs
+        run: |
+          # Replace with your deployment script or commands
+          scp path/to/your/svgs/* your_server_user@your_server:/path/to/website/svgs/
