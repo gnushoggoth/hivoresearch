@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+  <!-- Define patterns and gradients -->
+  <defs>
+    <!-- Noise pattern -->
+    <filter id="noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+    
+    <!-- Spiral path for text -->
+    <path id="spiral" d="M500,500 Q750,250 500,0 T500,500 T500,1000">
+      <animate attributeName="d" 
+               dur="20s" 
+               repeatCount="indefinite"
+               values="M500,500 Q750,250 500,0 T500,500 T500,1000;
+                       M500,500 Q250,750 500,1000 T500,500 T500,0;
+                       M500,500 Q750,250 500,0 T500,500 T500,1000"/>
+    </path>
+    
+    <!-- Fractal pattern -->
+    <pattern id="fractal" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse">
+      <text x="0" y="10" fill="#0f0" font-family="monospace" font-size="10">
+        פאר้க്കര्ЙЭЖЩ漢字
+      </text>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="1000" fill="#000"/>
+  
+  <!-- Noise overlay -->
+  <rect width="1000" height="1000" filter="url(#noise)" opacity="0.1"/>
+
+  <!-- Rotating mandalas -->
+  <g transform="translate(500 500)">
+    {Array.from({ length: 8 }, (_, i) => (
+      <g transform={`rotate(${i * 45})`}>
+        <path d="M0,0 L200,200 A200,200 0 0,1 -200,200 Z" 
+              fill="none" 
+              stroke="#0f0" 
+              stroke-width="0.5" 
+              opacity="0.3">
+          <animate attributeName="d" 
+                   dur={`${5 + i}s`}
+                   repeatCount="indefinite"
+                   values="M0,0 L200,200 A200,200 0 0,1 -200,200 Z;
+                           M0,0 L300,100 A200,200 0 0,1 -300,100 Z;
+                           M0,0 L200,200 A200,200 0 0,1 -200,200 Z"/>
+        </path>
+      </g>
+    ))}
+  </g>
+
+  <!-- ASCII art layers -->
+  <g id="ascii-layers">
+    {Array.from({ length: 20 }, (_, i) => (
+      <text x="50" y={50 + i * 50} 
+            fill="#0f0" 
+            font-family="monospace" 
+            font-size="10"
+            opacity={0.1 + (i % 3) * 0.2}>
+        {'YӨGŞӨTHӨTH'.repeat(10)}
+        <animate attributeName="x"
+                 values="-10;10;-10"
+                 dur={`${2 + i * 0.1}s`}
+                 repeatCount="indefinite"/>
+      </text>
+    ))}
+  </g>
+
+  <!-- Spiral text -->
+  <text fill="#0f0" font-size="12" opacity="0.8">
+    <textPath href="#spiral">
+      {'NYARLATHOTEP'.repeat(30)}
+    </textPath>
+  </text>
+
+  <!-- Central eye -->
+  <g transform="translate(500 500)">
+    <circle r="100" fill="none" stroke="#0f0" stroke-width="0.5">
+      <animate attributeName="r"
+               values="100;120;100"
+               dur="3s"
+               repeatCount="indefinite"/>
+    </circle>
+    <text x="-40" y="10" 
+          fill="#0f0" 
+          font-family="monospace" 
+          font-size="20">
+      @@@@@
+    </text>
+  </g>
+
+  <!-- Falling character columns -->
+  {Array.from({ length: 30 }, (_, i) => (
+    <g transform={`translate(${i * 35} 0)`}>
+      {Array.from({ length: 20 }, (_, j) => (
+        <text x="0" y="-50"
+              fill="#0f0"
+              font-family="monospace"
+              font-size="12"
+              opacity={0.3 + Math.random() * 0.7}>
+          {'∆∇∫∮∯∰∱∲∳'.split('').sort(() => Math.random() - 0.5).join('')}
+          <animate attributeName="y"
+                   from="-50"
+                   to="1050"
+                   dur={`${3 + Math.random() * 4}s`}
+                   repeatCount="indefinite"
+                   begin={`${j * 0.2}s`}/>
+        </text>
+      ))}
+    </g>
+  ))}
+
+  <!-- Glitch overlay -->
+  <rect width="1000" height="1000" 
+        fill="url(#fractal)" 
+        opacity="0.05" 
+        mix-blend-mode="screen">
+    <animate attributeName="opacity"
+             values="0.05;0.1;0.05"
+             dur="0.5s"
+             repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Random bursts of symbols -->
+  {Array.from({ length: 10 }, (_, i) => (
+    <g transform={`translate(${Math.random() * 1000} ${Math.random() * 1000})`}>
+      <text fill="#0f0" 
+            font-family="monospace" 
+            font-size={10 + Math.random() * 20}>
+        ⌘⌥⎋⌃⇧
+        <animate attributeName="opacity"
+                 values="0;1;0"
+                 dur={`${1 + Math.random() * 2}s`}
+                 repeatCount="indefinite"
+                 begin={`${i * 0.5}s`}/>
+      </text>
+    </g>
+  ))}
+</svg>
