@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" preserveAspectRatio="xMidYMid meet">
+  <!-- Metadata for GitHub display -->
+  <title>Glitch ASCII Art Portrait</title>
+  <desc>An experimental SVG exploring glitch aesthetics with ASCII-like elements</desc>
+  
+  <!-- Background -->
+  <rect width="800" height="1000" fill="#000"/>
+  
+  <!-- Glitch Pattern Definition -->
+  <defs>
+    <pattern id="glitch-pattern" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse">
+      <text x="0" y="8" fill="#8B0000" font-family="monospace" font-size="10">@</text>
+    </pattern>
+    
+    <!-- Additional Glitch Filters -->
+    <filter id="glitch-filter">
+      <feColorMatrix type="saturate" values="2"/>
+      <feComponentTransfer>
+        <feFuncR type="discrete" tableValues="0 1 0.5 0.8"/>
+        <feFuncG type="discrete" tableValues="0 0.5 1 0.3"/>
+        <feFuncB type="discrete" tableValues="0.7 0 0.5 1"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+  
+  <!-- Background Layer with Repeating ASCII-like Noise -->
+  <g id="background-noise">
+    <rect x="0" y="0" width="800" height="1000" fill="url(#glitch-pattern)" opacity="0.1"/>
+  </g>
+  
+  <!-- Main Glitch Portrait Container -->
+  <g id="glitch-portrait" filter="url(#glitch-filter)">
+    <!-- Face Outline with Distorted Curves -->
+    <path d="M400,200 
+             Q600,400 400,800 
+             Q200,400 400,200 
+             Q600,600 400,200 
+             Q200,600 400,800" 
+          fill="none" 
+          stroke="#8B0000"
+          stroke-width="2"
+          opacity="0.7"/>
+    
+    <!-- Recursive Text Path Tracing Face Outline -->
+    <text fill="#8B0000" opacity="0.6" font-family="monospace">
+      <textPath href="#face-path" startOffset="50%">
+        DIGITAL ENTROPY CONSUMES ALL PERCEPTION
+      </textPath>
+    </text>
+    
+    <!-- Glitching Eyes -->
+    <g id="glitchy-eyes">
+      <text x="350" y="400" font-family="monospace" font-size="16" 
+            transform="rotate(-10 350 400)" 
+            opacity="0.8" fill="#8B0000">
+        <animate attributeName="x" 
+                 values="340;360;350" 
+                 dur="0.5s" 
+                 repeatCount="indefinite"/>
+        @@@@
+      </text>
+      <text x="450" y="400" font-family="monospace" font-size="16" 
+            transform="rotate(10 450 400)" 
+            opacity="0.8" fill="#8B0000">
+        <animate attributeName="x" 
+                 values="440;460;450" 
+                 dur="0.5s" 
+                 repeatCount="indefinite"/>
+        @@@@
+      </text>
+    </g>
+    
+    <!-- Mouth Representation -->
+    <path d="M350,500 Q400,550 450,500" 
+          fill="none" 
+          stroke="#8B0000" 
+          stroke-width="2"
+          opacity="0.7">
+      <animate attributeName="d"
+               values="M350,500 Q400,550 450,500;
+                       M350,510 Q400,490 450,510;
+                       M350,500 Q400,550 450,500"
+               dur="1s"
+               repeatCount="indefinite"/>
+    </path>
+  </g>
+  
+  <!-- Scanning Effect -->
+  <rect id="scan-line" x="50" y="50" width="700" height="4" fill="#8B0000" opacity="0.6">
+    <animate attributeName="y"
+             from="50"  
+             to="950"
+             dur="1.5s" 
+             repeatCount="indefinite"/>
+  </rect>
+  
+  <!-- Falling Glitch Characters -->
+  <g id="falling-glyphs">
+    <text x="100" y="0" fill="#8B0000" opacity="0.5" font-family="monospace">
+      <animate attributeName="y"
+               from="-50"
+               to="1050" 
+               dur="3s"
+               repeatCount="indefinite"/>
+      !@#$%^&*
+    </text>
+    <text x="250" y="0" fill="#8B0000" opacity="0.5" font-family="monospace">
+      <animate attributeName="y"
+               from="-100"
+               to="1100" 
+               dur="2.5s"
+               repeatCount="indefinite"/>
+      NOISE
+    </text>
+    <text x="500" y="0" fill="#8B0000" opacity="0.5" font-family="monospace">
+      <animate attributeName="y"
+               from="-75"
+               to="1075" 
+               dur="2s"
+               repeatCount="indefinite"/>
+      ERROR
+    </text>
+  </g>
+</svg>
