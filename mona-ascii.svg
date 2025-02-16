@@ -1,83 +1,70 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000">
-  <!-- Background -->
   <rect width="800" height="1000" fill="#000"/>
   
-  <!-- ASCII Art Container -->
   <g id="ascii-container" font-family="monospace" font-size="10">
-    <!-- Creating a subtle gradient effect with different character densities -->
     <defs>
       <pattern id="ascii-pattern" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse">
-        <text x="0" y="8" fill="#32CD32">@</text>
+        <text x="0" y="8" fill="#8B0000">@</text>
       </pattern>
     </defs>
-
-    <!-- Frame -->
-    <rect x="50" y="50" width="700" height="900" fill="none" stroke="#32CD32" stroke-width="1"/>
-
-    <!-- ASCII Art Content - Layered approach for depth -->
+    
+    <rect x="50" y="50" width="700" height="900" fill="none" stroke="#8B0000" stroke-width="1"/>
+    
     <g id="background-layer">
       {Array.from({ length: 90 }, (_, i) => 
-        <text key={`bg-${i}`} x="60" y={60 + i * 10} fill="#0f0" opacity="0.3">
-          {'@$#*!~;:,. '.repeat(70)}
+        <text key={`bg-${i}`} x="60" y={60 + i * 10} fill="#8B0000" opacity="0.3">
+          {'!@#$%^&*()[]{}<>/\|?'.repeat(70)}  
         </text>
       )}
     </g>
-
-    <!-- Face Outline Layer -->
+    
     <g id="face-outline">
-      <path d="M400,200 Q600,400 400,800 Q200,400 400,200" 
+      <path d="M400,200 Q600,400 400,800 Q200,400 400,200 Q600,600 400,200 Q200,600 400,800" 
             fill="none" 
-            stroke="#32CD32" 
-            stroke-width="0.5"
+            stroke="#8B0000"
+            stroke-width="1"  
             id="face-path"/>
       
-      <!-- Map text to path -->
-      <text fill="#32CD32" opacity="0.8">
+      <text fill="#8B0000" opacity="0.8">
         <textPath href="#face-path">
-          {'MONALISA'.repeat(50)}
-        </textPath>
+          {'LIGOTTI '.repeat(50)}
+        </textPath>  
       </text>
     </g>
-
-    <!-- Features Layer -->
-    <g id="features" fill="#32CD32">
-      <!-- Eyes -->
-      <text x="350" y="400" font-size="14">@@@@</text>
-      <text x="450" y="400" font-size="14">@@@@</text>
+    
+    <g id="features" fill="#8B0000">
+      <text x="350" y="400" font-size="16" transform="rotate(-10 350 400)">@@@@</text>
+      <text x="450" y="400" font-size="16" transform="rotate(10 450 400)">@@@@</text>
       
-      <!-- Smile -->
-      <text x="375" y="500" font-size="12">~~~~~</text>
+      <path d="M350,500 Q400,550 450,500" fill="none" stroke="#8B0000" stroke-width="1"/>
     </g>
-
-    <!-- Animated scanning effect -->
-    <rect id="scan-line" x="50" y="50" width="700" height="2" fill="#32CD32" opacity="0.5">
+    
+    <rect id="scan-line" x="50" y="50" width="700" height="4" fill="#8B0000" opacity="0.8">
       <animate attributeName="y"
-               from="50"
+               from="50"  
                to="950"
-               dur="3s"
+               dur="1.5s" 
                repeatCount="indefinite"/>
     </rect>
-
-    <!-- Create matrix-style falling characters -->
-    {Array.from({ length: 20 }, (_, i) => (
-      <text x={60 + i * 35} y="0" fill="#32CD32" opacity="0.3">
+    
+    {Array.from({ length: 40 }, (_, i) => (
+      <text x={60 + i * 18} y="0" fill="#8B0000" opacity="0.5" transform="rotate(60)">  
         <animate attributeName="y"
                  from="-50"
-                 to="1050"
-                 dur={`${2 + Math.random() * 2}s`}
+                 to="1050" 
+                 dur={`${1 + Math.random()}s`}
                  repeatCount="indefinite"/>
-        {'@#$%&*!'.split('').sort(() => Math.random() - 0.5).join('')}
+        {'!@#$%^&*'.split('').sort(() => Math.random() - 0.5).join('')}
       </text>
     ))}
   </g>
-
-  <!-- Glitch effect overlay -->
+   
   <g id="glitch-layer">
-    <rect width="800" height="1000" fill="url(#ascii-pattern)" opacity="0.1">
-      <animate attributeName="opacity"
-               values="0.1;0.2;0.1"
-               dur="0.5s"
+    <rect width="800" height="1000" fill="url(#ascii-pattern)" opacity="0.2">
+      <animate attributeName="opacity" 
+               values="0.2;0.3;0.2"
+               dur="0.2s"
                repeatCount="indefinite"/>
-    </rect>
+    </rect>  
   </g>
 </svg>
