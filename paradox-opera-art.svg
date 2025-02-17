@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="paradox-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8A2BE2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4B0082;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="5"/> 
+      <feOffset dx="5" dy="5" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.5"/>
+      </feComponentTransfer>
+      <feMerge> 
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/> 
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#paradox-bg)" />
+  
+  <g transform="translate(100, 50)"> 
+    <path d="M75 0 L150 100 L75 200 L0 100 Z" fill="#FF4500" filter="url(#shadow)" 
+        transform="rotate(45, 75, 100)"/>
+    <text x="35" y="105" font-family="Verdana" font-size="20" fill="white">ACT I</text>
+    <text x="10" y="130" font-family="Verdana" font-size="14" fill="white">
+      The Malkavian Sin
+    </text>
+  </g>
+
+  <g transform="translate(325, 200)">
+    <circle cx="100" cy="100" r="100" fill="#008080" filter="url(#shadow)"/>  
+    <text x="55" y="90" font-family="Verdana" font-size="20" fill="white">ACT II</text>
+    <text x="25" y="120" font-family="Verdana" font-size="14" fill="white">  
+      Burnout of Cassian
+    </text>
+  </g>
+
+  <g transform="translate(550, 50)">
+    <rect x="0" y="0" width="150" height="200" fill="#9400D3" filter="url(#shadow)"/>
+    <text x="30" y="105" font-family="Verdana" font-size="20" fill="white">ACT III</text>  
+    <text x="5" y="130" font-family="Verdana" font-size="12" fill="white">
+      The Free Drone Lover &amp;
+    </text>
+    <text x="5" y="150" font-family="Verdana" font-size="12" fill="white">  
+      The Fallen Toreador
+    </text>
+  </g>
+   
+  <g transform="translate(325, 450)">
+    <polygon points="50,0 0,100 100,100" fill="#32CD32" filter="url(#shadow)"/>
+    <text x="20" y="80" font-family="Verdana" font-size="18" fill="white">ACT IV</text>
+    <text x="-10" y="110" font-family="Verdana" font-size="10" fill="white">
+      Rewriting Reality
+    </text>  
+  </g>
+
+  <path d="M50 50 Q400 50 750 400" stroke="white" stroke-width="5" fill="none" 
+     marker-end="url(#arrowhead)"/>
+  
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="0" refY="3" 
+        orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="white" />
+    </marker>
+  </defs>
+</svg>
