@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <!-- Ethereal glow -->
+    <filter id="darkGlow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Shadow effect -->
+    <filter id="shadow">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4"/>
+      <feOffset dx="0" dy="4" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.4"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Void effect -->
+    <filter id="void">
+      <feTurbulence type="fractalNoise" baseFrequency="0.01" numOctaves="3" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="10"/>
+    </filter>
+
+    <!-- Dark gradient -->
+    <linearGradient id="darkSky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0014"/>
+      <stop offset="100%" style="stop-color:#1a0033"/>
+    </linearGradient>
+
+    <!-- Blood moon gradient -->
+    <radialGradient id="bloodMoon" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#ff1a1a"/>
+      <stop offset="100%" style="stop-color:#660000"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Void background -->
+  <rect width="800" height="600" fill="url(#darkSky)"/>
+
+  <!-- Blood moon -->
+  <circle cx="650" cy="150" r="60" fill="url(#bloodMoon)" filter="url(#darkGlow)">
+    <animate attributeName="opacity"
+             values="0.8;0.6;0.8"
+             dur="20s"
+             repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Ancient branches -->
+  <g stroke="#330033" stroke-width="4" filter="url(#void)">
+    <path d="M0,200 Q400,100 800,300" fill="none">
+      <animate attributeName="d"
+               dur="30s"
+               repeatCount="indefinite"
+               values="M0,200 Q400,100 800,300;
+                      M0,200 Q400,150 800,300;
+                      M0,200 Q400,100 800,300"/>
+    </path>
+  </g>
+
+  <!-- Dark blossoms -->
+  <g filter="url(#darkGlow)">
+    <!-- Falling petals -->
+    <g>
+      <path d="M10,10 Q15,5 20,10 Q25,15 20,20 Q15,25 10,20 Q5,15 10,10" 
+            fill="#330011" transform="translate(200,100)">
+        <animateTransform attributeName="transform"
+                          type="translate"
+                          values="200,100; 180,600; 200,100"
+                          dur="20s"
+                          repeatCount="indefinite"/>
+        <animate attributeName="opacity"
+                 values="0.6;0.3;0.6"
+                 dur="15s"
+                 repeatCount="indefinite"/>
+      </path>
+    </g>
+
+    <!-- More falling petals with variations -->
+    <g>
+      <path d="M10,10 Q15,5 20,10 Q25,15 20,20 Q15,25 10,20 Q5,15 10,10" 
+            fill="#4d0019" transform="translate(400,50)">
+        <animateTransform attributeName="transform"
+                          type="translate"
+                          values="400,50; 420,600; 400,50"
+                          dur="25s"
+                          repeatCount="indefinite"/>
+        <animate attributeName="opacity"
+                 values="0.7;0.4;0.7"
+                 dur="18s"
+                 repeatCount="indefinite"/>
+      </path>
+    </g>
+  </g>
+
+  <!-- Ancient symbols -->
+  <g fill="none" stroke="#660033" stroke-width="1" opacity="0.3" filter="url(#darkGlow)">
+    <path d="M400,300 m-20,0 a20,20 0 1,0 40,0 a20,20 0 1,0 -40,0">
+      <animate attributeName="opacity"
+               values="0.3;0.1;0.3"
+               dur="10s"
+               repeatCount="indefinite"/>
+      <animateTransform attributeName="transform"
+                        type="rotate"
+                        from="0 400 300"
+                        to="360 400 300"
+                        dur="30s"
+                        repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- Dark mist -->
+  <g filter="url(#void)" opacity="0.2">
+    <path d="M0,500 Q200,450 400,500 Q600,550 800,500" 
+          fill="none" 
+          stroke="#330033" 
+          stroke-width="100">
+      <animate attributeName="d"
+               dur="40s"
+               repeatCount="indefinite"
+               values="M0,500 Q200,450 400,500 Q600,550 800,500;
+                      M0,500 Q200,550 400,500 Q600,450 800,500;
+                      M0,500 Q200,450 400,500 Q600,550 800,500"/>
+    </path>
+  </g>
+
+  <!-- Ethereal wisps -->
+  <g filter="url(#darkGlow)">
+    <circle cx="300" cy="200" r="2" fill="#660033">
+      <animate attributeName="opacity"
+               values="0.6;0.2;0.6"
+               dur="15s"
+               repeatCount="indefinite"/>
+    </circle>
+    <circle cx="500" cy="400" r="2" fill="#660033">
+      <animate attributeName="opacity"
+               values="0.6;0.2;0.6"
+               dur="12s"
+               repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>
