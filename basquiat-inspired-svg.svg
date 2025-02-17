@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <rect width="400" height="400" fill="#f7d9d3"/>
+  
+  <!-- Jumbled letters and words -->
+  <text x="25" y="80" font-size="28" fill="black">SAMO4SALE</text> 
+  <text x="200" y="40" font-size="16" fill="#113fcc">AaRrTt</text>
+  <text x="80" y="140" font-size="36" fill="#ef2213">CROWNS</text>
+  
+  <!-- Naive drawing of a face-->
+  <circle cx="320" cy="120" r="50" fill="none" stroke="black" stroke-width="2"/>
+  <circle cx="310" cy="110" r="8" fill="black"/>
+  <circle cx="330" cy="110" r="8" fill="black"/> 
+  <path d="M310,140 Q320,150 330,140" fill="none" stroke="black" stroke-width="4"/>
+  
+  <!-- Scribbled abstract shapes -->
+  <path fill="#f9e216" d="M50 200 L80 280 L110 200 Z" /> 
+  <path fill="none" stroke="#ef2213" stroke-width="4" d="M200 150 S300 180 200 250"/>
+  <rect x="280" y="220" width="80" height="60" fill="#113fcc" transform="rotate(20, 300, 300)"/>
+
+  <!-- Copyright symbol -->
+  <circle cx="360" cy="360" r="20" fill="none" stroke="black" stroke-width="2"/> 
+  <text x="353" y="367" font-size="22" fill="black">©</text>
+</svg>
