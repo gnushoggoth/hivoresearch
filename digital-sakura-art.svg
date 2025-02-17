@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <!-- Ethereal glow effect -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Digital noise -->
+    <filter id="noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="3" seed="5"/>
+      <feDisplacementMap in="SourceGraphic" scale="5"/>
+    </filter>
+
+    <!-- Glitch effect -->
+    <filter id="glitch">
+      <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="3" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="20" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+
+    <!-- Gradient for background -->
+    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#2a1b3d"/>
+      <stop offset="100%" style="stop-color:#1a0b2e"/>
+    </linearGradient>
+
+    <!-- Cherry blossom pattern -->
+    <pattern id="blossom" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse">
+      <path d="M25,25 L30,20 Q35,15 30,10 Q25,5 20,10 Q15,15 20,20 Z" fill="#ffd7e7" opacity="0.6">
+        <animate attributeName="opacity" values="0.6;0.3;0.6" dur="3s" repeatCount="indefinite"/>
+      </path>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#skyGradient)"/>
+
+  <!-- Digital noise overlay -->
+  <rect width="800" height="600" fill="#2a1b3d" opacity="0.1" filter="url(#noise)"/>
+
+  <!-- Mothman silhouette -->
+  <g transform="translate(400,300)" filter="url(#glitch)">
+    <path d="M0,-100 
+             Q-100,-50 -150,50 
+             Q-100,100 0,150 
+             Q100,100 150,50 
+             Q100,-50 0,-100" 
+          fill="#000" opacity="0.8">
+      <animate attributeName="d" 
+               dur="10s" 
+               repeatCount="indefinite"
+               values="M0,-100 Q-100,-50 -150,50 Q-100,100 0,150 Q100,100 150,50 Q100,-50 0,-100;
+                      M0,-90 Q-90,-40 -140,60 Q-90,110 0,160 Q90,110 140,60 Q90,-40 0,-90;
+                      M0,-100 Q-100,-50 -150,50 Q-100,100 0,150 Q100,100 150,50 Q100,-50 0,-100"/>
+    </path>
+  </g>
+
+  <!-- Glowing eyes -->
+  <g filter="url(#glow)">
+    <circle cx="370" cy="250" r="5" fill="#ff3366">
+      <animate attributeName="r" values="5;7;5" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="430" cy="250" r="5" fill="#ff3366">
+      <animate attributeName="r" values="5;7;5" dur="2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Falling cherry blossoms -->
+  <g opacity="0.7">
+    <g transform="translate(100,100)" filter="url(#glitch)">
+      <path d="M10,10 Q15,5 20,10 Q25,15 20,20 Q15,25 10,20 Q5,15 10,10" fill="#ffd7e7">
+        <animateTransform attributeName="transform" 
+                          type="translate" 
+                          from="0 0" 
+                          to="0 500" 
+                          dur="10s" 
+                          repeatCount="indefinite"/>
+      </path>
+    </g>
+    <g transform="translate(300,50)" filter="url(#glitch)">
+      <path d="M10,10 Q15,5 20,10 Q25,15 20,20 Q15,25 10,20 Q5,15 10,10" fill="#ffd7e7">
+        <animateTransform attributeName="transform" 
+                          type="translate" 
+                          from="0 0" 
+                          to="0 500" 
+                          dur="8s" 
+                          repeatCount="indefinite"/>
+      </path>
+    </g>
+  </g>
+
+  <!-- Digital circuit patterns -->
+  <g stroke="#ff3366" stroke-width="1" opacity="0.3">
+    <path d="M0,300 L800,300" filter="url(#glitch)">
+      <animate attributeName="opacity" values="0.3;0.1;0.3" dur="4s" repeatCount="indefinite"/>
+    </path>
+    <path d="M400,0 L400,600" filter="url(#glitch)">
+      <animate attributeName="opacity" values="0.3;0.1;0.3" dur="3s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- Binary code overlay -->
+  <text x="10" y="20" fill="#ff3366" opacity="0.2" font-family="monospace" font-size="10">
+    01001000 01000001 01010010 01000010 01001001 01001110 01000111 01000101 01010010
+    <animate attributeName="opacity" values="0.2;0.1;0.2" dur="5s" repeatCount="indefinite"/>
+  </text>
+
+  <!-- Ethereal mist -->
+  <g filter="url(#glow)" opacity="0.3">
+    <path d="M0,500 Q200,450 400,500 Q600,550 800,500" 
+          fill="none" 
+          stroke="#ffd7e7" 
+          stroke-width="50"
+          opacity="0.2">
+      <animate attributeName="d" 
+               dur="15s" 
+               repeatCount="indefinite"
+               values="M0,500 Q200,450 400,500 Q600,550 800,500;
+                      M0,500 Q200,550 400,500 Q600,450 800,500;
+                      M0,500 Q200,450 400,500 Q600,550 800,500"/>
+    </path>
+  </g>
+</svg>

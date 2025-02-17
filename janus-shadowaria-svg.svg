@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <filter id="shadow">
+      <feDropShadow dx="4" dy="8" stdDeviation="8"/>
+    </filter>
+    <linearGradient id="skyGradient" gradientTransform="rotate(90)">
+      <stop offset="0%"  stop-color="midnightblue"/>
+      <stop offset="100%" stop-color="black" />
+    </linearGradient>
+    <linearGradient id="irisGradient1">
+      <stop offset="0%" stop-color="#8B0000"/>
+      <stop offset="100%" stop-color="#FF4500"/>
+    </linearGradient>
+    <linearGradient id="irisGradient2">
+      <stop offset="0%" stop-color="#1E90FF"/>
+      <stop offset="100%" stop-color="#4B0082"/>  
+    </linearGradient>
+  </defs>
+  
+  <!-- Background sky -->
+  <rect x="0" y="0" width="800" height="600" fill="url(#skyGradient)" />
+  
+  <!-- Mountains -->
+  <path d="M0 450 C200 350, 200 200, 400 300 S600 350, 800 450 L800 600 L0 600 Z" fill="#1C1C1C"/>
+  
+  <!-- Janus head outline -->
+  <path id="head" d="M200,250 C150,400 250,400 250,500 C250,550 390,550 450,500 C450,400 580,400 500,250 C480,190 240,190 200,250 Z" fill="#E6E6FA" filter="url(#shadow)"/>
+  
+  <!-- Left eye socket -->  
+  <circle cx="275" cy="350" r="40" fill="#D3D3D3"/>
+  
+  <!-- Left iris -->
+  <circle cx="275" cy="350" r="25" fill="url(#irisGradient1)"/>
+  
+  <!-- Right eye socket -->
+  <circle cx="425" cy="350" r="40" fill="#D3D3D3"/>
+  
+  <!-- Right iris -->
+  <circle cx="425" cy="350" r="25" fill="url(#irisGradient2)"/>
+  
+  <!-- Nose -->
+  <path d="M335 370 L350 400 L365 370 Z" fill="#D3D3D3"/>
+  
+  <!-- Mouth -->
+  <path d="M290 430 C330 490, 370 490, 410 430" stroke="#D3D3D3" stroke-width="5" fill="none"/>
+  
+  <!-- Hidden sigil pattern --> 
+  <g style="mix-blend-mode: exclusion;">
+    <path fill="none" stroke="white" stroke-width="2" d="M 200 70 L 250 140 L 220 210" />
+    <path fill="none" stroke="white" stroke-width="2" d="M 380 100 L 460 180 L 400 240" />
+    <path fill="none" stroke="white" stroke-width="2" d="M 80 400 L 120 460 L 80 530" />
+    <path fill="none" stroke="white" stroke-width="2" d="M 600 450 L 660 500 L 620 580" />
+  </g>
+</svg>

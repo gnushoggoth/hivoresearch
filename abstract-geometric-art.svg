@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <!-- Background -->
+  <rect width="400" height="400" fill="#F0F4F8"/>
+  
+  <!-- Layered Geometric Shapes -->
+  <rect x="50" y="50" width="300" height="300" fill="#4A90E2" opacity="0.7" rx="20"/>
+  
+  <circle cx="200" cy="200" r="150" fill="#E74C3C" opacity="0.5"/>
+  
+  <polygon points="200,50 350,350 50,350" fill="#2ECC71" opacity="0.6"/>
+  
+  <!-- Smaller Intersecting Shapes -->
+  <rect x="150" y="150" width="100" height="100" fill="#F39C12" opacity="0.8" transform="rotate(45 200 200)"/>
+  
+  <!-- Subtle Border -->
+  <rect width="400" height="400" fill="none" stroke="#34495E" stroke-width="4" opacity="0.3"/>
+</svg>
