@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <filter id="static">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" seed="2"/>
+      <feDisplacementMap in="SourceGraphic" scale="50"/>
+    </filter>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%" style="stop-color:#8A2BE2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#000000;stop-opacity:1" />
+    </radialGradient>
+  </defs>
+
+  <rect x="0" y="0" width="800" height="600" fill="black"/>
+  
+  <circle cx="400" cy="300" r="200" fill="url(#glow)" filter="url(#static)"/>
+   
+  <g fill="none" stroke="#8A2BE2" stroke-width="2">
+    <path d="M200,200 Q400,50 600,200" />
+    <path d="M200,400 Q400,550 600,400" />
+    <path d="M100,300 Q400,200 700,300" />
+    <path d="M700,300 Q400,400 100,300" />
+  </g>
+
+  <text x="400" y="300" text-anchor="middle" fill="#E6E6FA" font-size="40" font-family="serif">
+    Archive of Lost Things
+  </text>
+
+</svg>

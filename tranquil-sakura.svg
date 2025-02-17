@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <!-- Soft glow effect -->
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Gentle wave effect -->
+    <filter id="gentleWave">
+      <feTurbulence type="fractalNoise" baseFrequency="0.01" numOctaves="2" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="10"/>
+    </filter>
+
+    <!-- Gradient for peaceful sky -->
+    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#e6f3ff"/>
+      <stop offset="100%" style="stop-color:#f8e1eb"/>
+    </linearGradient>
+
+    <!-- Cherry blossom pattern -->
+    <pattern id="blossom" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M20,20 Q25,15 20,10 Q15,5 10,10 Q5,15 10,20 Q15,25 20,20" 
+            fill="#ffd7e7" opacity="0.7"/>
+    </pattern>
+  </defs>
+
+  <!-- Peaceful background -->
+  <rect width="800" height="600" fill="url(#skyGradient)"/>
+
+  <!-- Gentle flowing lines -->
+  <g stroke="#e8c3d7" stroke-width="2" opacity="0.3" filter="url(#gentleWave)">
+    <path d="M0,300 Q200,280 400,300 Q600,320 800,300">
+      <animate attributeName="d" 
+               dur="20s"
+               repeatCount="indefinite"
+               values="M0,300 Q200,280 400,300 Q600,320 800,300;
+                      M0,300 Q200,320 400,300 Q600,280 800,300;
+                      M0,300 Q200,280 400,300 Q600,320 800,300"/>
+    </path>
+  </g>
+
+  <!-- Floating cherry blossoms -->
+  <g filter="url(#softGlow)">
+    <!-- Blossom 1 -->
+    <path d="M10,10 Q15,5 20,10 Q25,15 20,20 Q15,25 10,20 Q5,15 10,10" 
+          fill="#ffd7e7" transform="translate(200,100)">
+      <animateTransform attributeName="transform"
+                        type="translate"
+                        values="200,100; 220,600; 200,100"
+                        dur="30s"
+                        repeatCount="indefinite"/>
+      <animate attributeName="opacity"
+               values="0.8;0.6;0.8"
+               dur="10s"
+               repeatCount="indefinite"/>
+    </path>
+    
+    <!-- Blossom 2 -->
+    <path d="M10,10 Q15,5 20,10 Q25,15 20,20 Q15,25 10,20 Q5,15 10,10" 
+          fill="#ffd7e7" transform="translate(400,50)">
+      <animateTransform attributeName="transform"
+                        type="translate"
+                        values="400,50; 380,600; 400,50"
+                        dur="25s"
+                        repeatCount="indefinite"/>
+      <animate attributeName="opacity"
+               values="0.7;0.5;0.7"
+               dur="8s"
+               repeatCount="indefinite"/>
+    </path>
+    
+    <!-- Blossom 3 -->
+    <path d="M10,10 Q15,5 20,10 Q25,15 20,20 Q15,25 10,20 Q5,15 10,10" 
+          fill="#ffd7e7" transform="translate(600,150)">
+      <animateTransform attributeName="transform"
+                        type="translate"
+                        values="600,150; 580,600; 600,150"
+                        dur="35s"
+                        repeatCount="indefinite"/>
+      <animate attributeName="opacity"
+               values="0.9;0.7;0.9"
+               dur="12s"
+               repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- Soft mist -->
+  <g filter="url(#softGlow)" opacity="0.4">
+    <path d="M0,500 Q200,480 400,500 Q600,520 800,500" 
+          fill="none" 
+          stroke="#f8e1eb" 
+          stroke-width="100">
+      <animate attributeName="d" 
+               dur="30s" 
+               repeatCount="indefinite"
+               values="M0,500 Q200,480 400,500 Q600,520 800,500;
+                      M0,500 Q200,520 400,500 Q600,480 800,500;
+                      M0,500 Q200,480 400,500 Q600,520 800,500"/>
+    </path>
+  </g>
+
+  <!-- Gentle light particles -->
+  <g filter="url(#softGlow)">
+    <circle cx="200" cy="300" r="2" fill="#ffd7e7">
+      <animate attributeName="opacity"
+               values="0.6;0.2;0.6"
+               dur="15s"
+               repeatCount="indefinite"/>
+    </circle>
+    <circle cx="400" cy="200" r="2" fill="#ffd7e7">
+      <animate attributeName="opacity"
+               values="0.6;0.2;0.6"
+               dur="12s"
+               repeatCount="indefinite"/>
+    </circle>
+    <circle cx="600" cy="400" r="2" fill="#ffd7e7">
+      <animate attributeName="opacity"
+               values="0.6;0.2;0.6"
+               dur="18s"
+               repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>
