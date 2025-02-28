@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmic Tentacles: Oceanic Consciousness</title>
+    
+    <!-- Reset and Global Styles -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/tentacle.css">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Chakra+Petch:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="cosmic-container">
+        <canvas id="mainCanvas"></canvas>
+        
+        <div class="ui-overlay">
+            <div class="title-section">
+                <h1 class="cosmic-title">TENTACULAR HORIZONS</h1>
+                <p class="cosmic-subtitle">Where Maritime Mythology Meets Technological Dreamscape</p>
+            </div>
+            
+            <div class="control-panel">
+                <div class="slider-group">
+                    <label for="tentacleComplexity">Tentacle Complexity</label>
+                    <input type="range" id="tentacleComplexity" min="1" max="10" value="5">
+                    
+                    <label for="colorIntensity">Color Resonance</label>
+                    <input type="range" id="colorIntensity" min="1" max="10" value="7">
+                    
+                    <label for="movementSpeed">Fluid Dynamics</label>
+                    <input type="range" id="movementSpeed" min="1" max="10" value="6">
+                </div>
+                
+                <div class="action-buttons">
+                    <button id="generateBtn" class="cosmic-btn">Regenerate Realm</button>
+                    <button id="saveBtn" class="cosmic-btn">Capture Essence</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Preload Assets -->
+    <div class="preload-assets" style="display:none;">
+        <img src="assets/images/background.png" alt="Background Texture">
+        <img src="assets/images/texture-overlay.png" alt="Texture Overlay">
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/scene.js"></script>
+    <script src="js/tentacle.js"></script>
+    <script src="js/interaction.js"></script>
+</body>
+</html>

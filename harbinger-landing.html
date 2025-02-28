@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harbinger | Digital Metamorphosis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Neue+Haas+Grotesk:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-background: #0a0a0e;
+            --color-primary: #ff3366;
+            --color-secondary: #2de0c7;
+            --color-text-primary: #f0f0f0;
+            --color-text-secondary: #8e8e9c;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Neue Haas Grotesk', sans-serif;
+            background-color: var(--color-background);
+            color: var(--color-text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            min-height: 100vh;
+            align-items: center;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .title {
+            font-size: 3.5rem;
+            font-weight: 600;
+            background: linear-gradient(
+                90deg, 
+                var(--color-primary), 
+                var(--color-secondary)
+            );
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .subtitle {
+            color: var(--color-text-secondary);
+            font-size: 1.2rem;
+            max-width: 600px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .btn-primary {
+            background: var(--color-primary);
+            color: var(--color-background);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--color-secondary);
+            border-color: var(--color-secondary);
+        }
+
+        .visual-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .digital-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                135deg, 
+                rgba(45, 224, 199, 0.1), 
+                rgba(255, 51, 102, 0.1)
+            );
+            pointer-events: none;
+            mix-blend-mode: overlay;
+        }
+
+        .system-interface {
+            background: rgba(20, 20, 30, 0.8);
+            border: 1px solid rgba(255, 51, 102, 0.2);
+            padding: 2rem;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .log-entry {
+            font-family: 'Courier New', monospace;
+            color: var(--color-secondary);
+            margin-bottom: 1rem;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 1024px) {
+            .container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <h1 class="title">Harbinger</h1>
+            <p class="subtitle">
+                A digital metamorphosis exploring the liminal spaces between biological consciousness and computational systems. Where flesh meets algorithm, and reality becomes a negotiable interface.
+            </p>
+            <div class="cta-buttons">
+                <a href="#" class="btn btn-primary">Enter Protocol</a>
+                <a href="#" class="btn btn-secondary">Research Vector</a>
+            </div>
+        </div>
+        <div class="visual-container">
+            <div class="digital-overlay"></div>
+            <div class="system-interface">
+                <div class="log-entry">
+                    > system.consciousness.init()
+                </div>
+                <div class="log-entry">
+                    > mutation_vector = ['flesh', 'network', 'identity']
+                </div>
+                <div class="log-entry">
+                    > analyzing_boundary_dissolution: 87.3%
+                </div>
+                <div class="log-entry">
+                    > transcendence.protocols = ACTIVE
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

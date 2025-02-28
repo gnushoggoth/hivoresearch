@@ -1,0 +1,33 @@
+{
+    "name": "Quantum Superposition Gallery",
+    "version": "0.7.291",
+    "description": "Computational aesthetic exploration of consciousness and technological membranes",
+    "deploymentProtocol": {
+        "type": "quantum-narrative",
+        "complexity": 0.87,
+        "entropyThreshold": 0.62,
+        "narrativeResonance": 0.93
+    },
+    "artworkProcessing": {
+        "method": "quantum-transformation",
+        "parameters": {
+            "biologicalInterface": true,
+            "technologicalSubstrate": true,
+            "liminalStateProcessing": true
+        }
+    },
+    "scripts": {
+        "start": "quantum-server --mode=emergence",
+        "deploy": "quantum-deploy --vector=narrative-amplification",
+        "test": "quantum-test --complexity=high"
+    },
+    "dependencies": {
+        "quantum-narrative-processor": "^2.4.0",
+        "computational-aesthetics": "^0.9.x",
+        "consciousness-interface": "~1.7.3"
+    },
+    "devDependencies": {
+        "entropy-simulator": "^0.6.2",
+        "narrative-debugger": "^1.2.1"
+    }
+}

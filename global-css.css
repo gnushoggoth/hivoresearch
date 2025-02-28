@@ -1,0 +1,147 @@
+:root {
+    --bg-dark: #0a0a1a;
+    --accent-red: #ff3366;
+    --accent-teal: #2de0c7;
+    --accent-purple: #9c27b0;
+    --text-light: #f0f0f0;
+    
+    --gradient-background: linear-gradient(
+        45deg, 
+        rgba(10, 10, 26, 0.9), 
+        rgba(30, 30, 50, 0.9)
+    );
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Chakra Petch', monospace;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+}
+
+.cosmic-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#mainCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.ui-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    pointer-events: none;
+}
+
+.title-section {
+    padding: 2rem;
+    text-align: center;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.title-section:hover {
+    opacity: 1;
+}
+
+.cosmic-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    color: var(--accent-red);
+    text-shadow: 0 0 10px rgba(255, 51, 102, 0.5);
+    letter-spacing: 2px;
+}
+
+.cosmic-subtitle {
+    font-size: 1.2rem;
+    color: var(--accent-teal);
+    margin-top: 0.5rem;
+}
+
+.control-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    pointer-events: auto;
+}
+
+.slider-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 300px;
+    margin-bottom: 1rem;
+}
+
+label {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+input[type="range"] {
+    width: 100%;
+    accent-color: var(--accent-red);
+}
+
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.cosmic-btn {
+    background: var(--accent-purple);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Orbitron', sans-serif;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cosmic-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(156, 39, 176, 0.5);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .cosmic-title {
+        font-size: 2rem;
+    }
+    
+    .cosmic-subtitle {
+        font-size: 1rem;
+    }
+    
+    .slider-group {
+        width: 250px;
+    }
+}

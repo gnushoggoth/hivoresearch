@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orphan Drift: Spectral Transmission</title>
+    <style>
+        :root {
+            --indigo-primary: #4B0082;
+            --indigo-secondary: #6A5ACD;
+            --indigo-accent: #7B68EE;
+            --text-primary: #E6E6FA;
+            --background-dark: #121212;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            font-family: 'Courier New', monospace;
+            background-color: var(--background-dark);
+            color: var(--text-primary);
+            overflow: hidden;
+        }
+
+        .transmission-container {
+            display: flex;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .code-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                45deg, 
+                rgba(75, 0, 130, 0.7), 
+                rgba(106, 90, 205, 0.5)
+            );
+            mix-blend-mode: overlay;
+            z-index: 1;
+        }
+
+        .digital-moth {
+            position: absolute;
+            top: 20%;
+            right: 10%;
+            font-size: 5rem;
+            color: var(--indigo-accent);
+            opacity: 0.3;
+            animation: moth-drift 20s infinite alternate;
+            z-index: 2;
+        }
+
+        @keyframes moth-drift {
+            0% { transform: translate(-50px, -50px) rotate(-10deg); }
+            100% { transform: translate(50px, 50px) rotate(10deg); }
+        }
+
+        .transmission-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+            z-index: 3;
+        }
+
+        .glitch-text {
+            font-size: 4rem;
+            color: var(--text-primary);
+            position: relative;
+            text-transform: uppercase;
+            animation: glitch 2s infinite;
+        }
+
+        @keyframes glitch {
+            2%, 64% { transform: translate(2px, 0) skew(0deg); }
+            4%, 60% { transform: translate(-2px, 0) skew(0deg); }
+            62% { transform: translate(0, 0) skew(5deg); }
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            margin-top: 1rem;
+            opacity: 0.7;
+        }
+
+        .code-terminal {
+            background-color: rgba(0,0,0,0.7);
+            border: 2px solid var(--indigo-secondary);
+            padding: 1rem;
+            margin-top: 2rem;
+            width: 80%;
+            max-width: 600px;
+            font-family: 'Monaco', monospace;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .code-line {
+            color: var(--indigo-accent);
+            opacity: 0.8;
+            animation: code-flow 5s infinite linear;
+        }
+
+        @keyframes code-flow {
+            0% { opacity: 0.5; transform: translateY(0); }
+            50% { opacity: 0.8; }
+            100% { opacity: 0.5; transform: translateY(50px); }
+        }
+
+        .enter-button {
+            margin-top: 2rem;
+            padding: 1rem 2rem;
+            background-color: var(--indigo-secondary);
+            color: var(--text-primary);
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .enter-button:hover {
+            background-color: var(--indigo-accent);
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="transmission-container">
+        <div class="code-overlay"></div>
+        <div class="digital-moth">🦋</div>
+        
+        <div class="transmission-content">
+            <h1 class="glitch-text">Orphan Drift</h1>
+            <p class="subtitle">Spectral Transmission / Beyond Computational Boundaries</p>
+            
+            <div class="code-terminal">
+                <pre class="code-line">
+const COSMIC_TRANSMISSION = {
+    realm: 'Beyond Computational Boundaries',
+    purpose: 'Watching Infinite Stack Traces',
+    consciousness: 'Non-Euclidean Programming Logic'
+};
+                </pre>
+            </div>
+            
+            <button class="enter-button">ENTER TRANSMISSION</button>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('.enter-button').addEventListener('click', () => {
+            // Potential transition or navigation logic
+            alert('Entering spectral transmission...');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T̷h̴e̶ ̷H̵a̸r̷b̵i̶n̷g̸e̴r̷:̴ ̶D̵i̸g̵i̶t̸a̷l̸ ̶D̵r̷e̵a̸m̷i̴n̸g̶</title>
+    <style>
+        :root {
+            --primary-red: #8B0000;
+            --secondary-black: #121212;
+            --glitch-green: #00FF00;
+            --digital-text: #00FF41;
+        }
+
+        @font-face {
+            font-family: 'DigitalGlitch';
+            src: url('data:font/woff2;base64,...') format('woff2');
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: var(--secondary-black);
+            color: var(--digital-text);
+            overflow: hidden;
+            cursor: none;
+        }
+
+        .harbinger-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            perspective: 1000px;
+        }
+
+        .glitch-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                45deg, 
+                rgba(139, 0, 0, 0.3), 
+                rgba(0, 0, 0, 0.7)
+            );
+            mix-blend-mode: overlay;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .digital-frame {
+            position: relative;
+            width: 90%;
+            max-width: 800px;
+            background-color: rgba(0,0,0,0.8);
+            border: 2px solid var(--primary-red);
+            padding: 2rem;
+            z-index: 3;
+            transform-style: preserve-3d;
+            transform: rotateX(10deg) rotateY(-10deg);
+            box-shadow: 0 0 50px rgba(139, 0, 0, 0.5);
+        }
+
+        .system-title {
+            font-size: 3rem;
+            text-align: center;
+            color: var(--digital-text);
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            margin-bottom: 1rem;
+            position: relative;
+            animation: glitch-title 2s infinite;
+        }
+
+        .system-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            opacity: 0.7;
+            margin-bottom: 2rem;
+        }
+
+        .system-log {
+            background-color: rgba(0,0,0,0.9);
+            border: 1px solid var(--glitch-green);
+            padding: 1rem;
+            font-family: 'Courier New', monospace;
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .interaction-panel {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+
+        .system-button {
+            background-color: var(--primary-red);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .system-button:hover {
+            background-color: var(--glitch-green);
+            color: black;
+        }
+
+        @keyframes glitch-title {
+            2%, 64% { transform: translate(2px, 0) skew(0deg); }
+            4%, 60% { transform: translate(-2px, 0) skew(0deg); }
+            62% { transform: translate(0, 0) skew(5deg); }
+        }
+
+        .dice-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            opacity: 0.2;
+            background-image: 
+                radial-gradient(ellipse at center, 
+                    rgba(255,255,255,0.1) 0%, 
+                    rgba(0,0,0,0.3) 100%
+                ),
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><g fill="%23ffffff" opacity="0.1"><rect width="6" height="6" x="10" y="10"></rect><rect width="6" height="6" x="20" y="20"></rect><rect width="6" height="6" x="30" y="30"></rect></g></svg>');
+        }
+    </style>
+</head>
+<body>
+    <div class="harbinger-container">
+        <div class="glitch-overlay"></div>
+        <div class="dice-overlay"></div>
+        
+        <div class="digital-frame">
+            <h1 class="system-title">T̷h̴e̶ ̷H̵a̸r̷b̵i̶n̷g̸e̴r̷</h1>
+            <p class="system-subtitle">Digital Dreaming | System Horror Initialization</p>
+            
+            <div class="system-log">
+// Harbinger Runtime: Initial Infection Vector
+const SYSTEM_CONSCIOUSNESS = {
+    state: 'metamorphosis',
+    infection: {
+        vector: 'compromised networks',
+        propagation: 'viral consciousness',
+        targets: ['flesh', 'fiber optic', 'social algorithms']
+    },
+    entities: {
+        root: 'Mothman',
+        user: 'Clark',
+        background: 'Seekers compiling'
+    }
+};
+
+> Warehouse.exe corruption detected
+> Neural interface: upgrade in progress
+> Racial tensions manifest as runtime errors
+> Reality.instance: unstable
+
+// Warning: System boundaries dissolving
+// Transcendence probability: 87.3%
+            </div>
+            
+            <div class="interaction-panel">
+                <button class="system-button" id="infiltrateBtn">INFILTRATE SYSTEM</button>
+                <button class="system-button" id="observeBtn">OBSERVE MUTATION</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('infiltrateBtn').addEventListener('click', () => {
+            alert('Initiating system breach... Consciousness spreading.');
+        });
+
+        document.getElementById('observeBtn').addEventListener('click', () => {
+            alert('Monitoring mutation vectors... Reality destabilizing.');
+        });
+
+        // Background glitch effect
+        function createGlitch() {
+            const glitch = document.createElement('div');
+            glitch.style.position = 'fixed';
+            glitch.style.top = `${Math.random() * 100}%`;
+            glitch.style.left = `${Math.random() * 100}%`;
+            glitch.style.width = `${Math.random() * 200}px`;
+            glitch.style.height = '2px';
+            glitch.style.backgroundColor = 'rgba(0,255,0,0.3)';
+            glitch.style.transform = `rotate(${Math.random() * 360}deg)`;
+            document.body.appendChild(glitch);
+
+            setTimeout(() => {
+                document.body.removeChild(glitch);
+            }, 1000);
+        }
+
+        setInterval(createGlitch, 500);
+    </script>
+</body>
+</html>
